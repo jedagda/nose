@@ -6,10 +6,27 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXFileReference section */
+		48F9D6442389DC6400C02191 /* truffle-config.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "truffle-config.js"; sourceTree = "<group>"; };
+		48F9D6452389DC6400C02191 /* auto.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = auto.js; sourceTree = "<group>"; };
+		48F9D6462389DC6400C02191 /* installed_contracts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = installed_contracts; sourceTree = "<group>"; };
+		48F9D6472389DC6500C02191 /* migrations */ = {isa = PBXFileReference; lastKnownFileType = folder; path = migrations; sourceTree = "<group>"; };
+		48F9D6482389DC6500C02191 /* contracts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = contracts; sourceTree = "<group>"; };
+		48F9D6492389DC6500C02191 /* build */ = {isa = PBXFileReference; lastKnownFileType = folder; path = build; sourceTree = "<group>"; };
+		48F9D64A2389DC6500C02191 /* test */ = {isa = PBXFileReference; lastKnownFileType = folder; path = test; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
 /* Begin PBXGroup section */
 		48F9D63D2389DB0600C02191 = {
 			isa = PBXGroup;
 			children = (
+				48F9D6452389DC6400C02191 /* auto.js */,
+				48F9D6492389DC6500C02191 /* build */,
+				48F9D6482389DC6500C02191 /* contracts */,
+				48F9D6462389DC6400C02191 /* installed_contracts */,
+				48F9D6472389DC6500C02191 /* migrations */,
+				48F9D64A2389DC6500C02191 /* test */,
+				48F9D6442389DC6400C02191 /* truffle-config.js */,
 			);
 			sourceTree = "<group>";
 		};
