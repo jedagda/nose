@@ -4,20 +4,24 @@ pragma experimental ABIEncoderV2;
 import "jsmnsol-lib/JsmnSolLib.sol";
 
 contract SmellTracker{
-
+	
+	//mapping containing current unresolved smells
     mapping (address => uint) public smellBase;
-    bool hasMappedInitial = false;//Flag indicating if initial smell JSON was mapped
+    //Flag indicating if initial smell report was mapped
+    bool hasMappedInitial = false;
     
     constructor() public{
         
     }
     
     
+    
     /**
 		checkSmells()
-    
+		@param smellReport - JSON code report
+		@return number of smells identified in report
     **/
-    function checkSmells(string memory smellReport) internal returns (uint){
+    function checkSmells(string memory smellReport) public returns (uint){
         
         //Fields to store return values of parsing call
         uint returnCode;
@@ -32,5 +36,7 @@ contract SmellTracker{
         //TODO - Return actual number of smells found
         return 41;
     }
+    
+    
 
 }
