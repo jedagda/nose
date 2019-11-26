@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXFileReference section */
+		487F38D7238CABD9009EF21C /* didfix.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = didfix.js; sourceTree = "<group>"; };
 		48F9D6442389DC6400C02191 /* truffle-config.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "truffle-config.js"; sourceTree = "<group>"; };
 		48F9D6452389DC6400C02191 /* balances.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = balances.js; sourceTree = "<group>"; };
 		48F9D6462389DC6400C02191 /* installed_contracts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = installed_contracts; sourceTree = "<group>"; };
 		48F9D6472389DC6500C02191 /* migrations */ = {isa = PBXFileReference; lastKnownFileType = folder; path = migrations; sourceTree = "<group>"; };
 		48F9D6482389DC6500C02191 /* contracts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = contracts; sourceTree = "<group>"; };
-		48F9D6492389DC6500C02191 /* build */ = {isa = PBXFileReference; lastKnownFileType = folder; path = build; sourceTree = "<group>"; };
 		48F9D64A2389DC6500C02191 /* test */ = {isa = PBXFileReference; lastKnownFileType = folder; path = test; sourceTree = "<group>"; };
 		48F9D64B238A8DB200C02191 /* setup.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = setup.js; sourceTree = "<group>"; };
 		48F9D64C238A8F2200C02191 /* status.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = status.js; sourceTree = "<group>"; };
@@ -26,8 +26,8 @@
 				48F9D6452389DC6400C02191 /* balances.js */,
 				48F9D64B238A8DB200C02191 /* setup.js */,
 				48F9D64D238A915400C02191 /* cancel.js */,
+				487F38D7238CABD9009EF21C /* didfix.js */,
 				48F9D64C238A8F2200C02191 /* status.js */,
-				48F9D6492389DC6500C02191 /* build */,
 				48F9D6482389DC6500C02191 /* contracts */,
 				48F9D6462389DC6400C02191 /* installed_contracts */,
 				48F9D6472389DC6500C02191 /* migrations */,

@@ -5,9 +5,12 @@ import "./SmellTracker.sol";
 contract Raptor{
     
     address private manager;//Address of manager for high level operation clearance
+    address private payTo;
     uint private totalReward = 0;
     bool private isActive = false;
-    string json = "{ \"key1\": { \"key1.1\": \"value\", \"key1.2\": 3, \"key1.3\": true } }";
+    string json = "{  \"total\":40,  \"p\":1,  \"ps\":100,  \"paging\":{   \"pageIndex\":1,   \"pageSize\":100,   \"total\":40  },  \"effortTotal\":241,  \"debtTotal\":241,  \"issues\":[   {    \"key\":\"AW6gHXBEthlwlpOpxQdg\",    \"status\":\"OPEN\"   },   {    \"key\":\"AW6gHXBEthlwlpOpxQdh\",    \"status\":\"OPEN\"   }  ] } ";
+    
+    string jsonx = "{  \"total\":40,  \"p\":1,  \"ps\":100,  \"paging\":{   \"pageIndex\":1,   \"pageSize\":100,   \"total\":40  },  \"effortTotal\":241,  \"debtTotal\":241,  \"issues\":[   {    \"key\":\"AW6gHXBEthlwlpOpxQdg\",    \"status\":\"CLOSED\"   },   {    \"key\":\"AW6gHXBEthlwlpOpxQdh\",    \"status\":\"CLOSED\"   }  ] } ";
     
     //Address of smell tracker for later use
     address private smellTrackerAddress;
@@ -24,19 +27,20 @@ contract Raptor{
     /**
 		setup()
 		initial contract setup
-		@param initialSmellReport - initial JSON report
+		@param smellReportAddress - initial JSON report
 		@param rewardPerSmell - reward per smell
 		@return Success flag
     **/
-    function setup(string memory initialSmellReport, uint rewardPerSmell) public payable returns (bool){
+    function setup(string memory smellReportAddress, address _payTo, uint rewardPerSmell) public payable returns (bool){
         require(!isActive);
         
         //Save details
         manager = msg.sender;
+        payTo = _payTo;
         totalReward = msg.value;
         
         //Initial smell check
-        uint smells = SmellTracker(smellTrackerAddress).checkSmells(initialSmellReport);
+        uint smells = SmellTracker(smellTrackerAddress).checkSmellsF(json, false);
         isActive = true;
     }
     
@@ -55,6 +59,28 @@ contract Raptor{
 		return true;
 	}
 	
+	
+	/**
+		checkReport()
+		Used to update smell report and reward for smell removal
+		@return Smells removed
+    **/
+    function checkReport() public payable returns (bool){
+        //require(isActive);
+        
+        uint oldSmells = SmellTracker(smellTrackerAddress).getSmellNumber();
+        
+        SmellTracker(smellTrackerAddress).reloadReport();
+        
+        uint smells = SmellTracker(smellTrackerAddress).checkSmellsF(jsonx, true);
+        
+        //if (smells<oldSmells){
+		msg.sender.transfer(totalReward);
+		//}
+		
+		return true;
+    }
+	
 	/**
 		status()
 		Returns active flag
@@ -64,16 +90,7 @@ contract Raptor{
 		return isActive;
 	}
     
-    /**
-		checkSmells()
-		Used to update smell report and reward for smell removal
-		@return Smells removed
-    **/
-    function checkSmells(string memory smellReport, bool isInitial) public payable returns (uint){
-        require(isActive);
-        
-        uint smells = SmellTracker(smellTrackerAddress).checkSmells(smellReport);
-    }
+    
     
     //To be called to reward for removing smells
     function reward(uint smellsRemoved) private returns (bool){

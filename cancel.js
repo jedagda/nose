@@ -6,7 +6,7 @@ module.exports = function(callback) {
 		let accounts = await web3.eth.getAccounts()
 		let contract = await Raptor.deployed()
 		
-		let didCancel = await contract.cancelProgram({from: accounts[2]});
+		let didCancel = await contract.cancelProgram({from: accounts[0]});
 		
 		console.log(didCancel)
 		
