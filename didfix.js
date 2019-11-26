@@ -6,9 +6,9 @@ module.exports = function(callback) {
 		let accounts = await web3.eth.getAccounts()
 		let contract = await Raptor.deployed()
 		
-		let didSet = await contract.setup("report//addr", accounts[1], 400, {from: accounts[0], value: 29879897619999997000});
+		let rex = await contract.checkReport({from: accounts[1]});
 		
-		console.log(didSet)
+		console.log("Report checked "+rex)
 		
 		callback()
 		
