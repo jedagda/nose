@@ -59,7 +59,6 @@ contract Raptor{
 		return true;
 	}
 	
-	
 	/**
 		checkReport()
 		Used to update smell report and reward for smell removal

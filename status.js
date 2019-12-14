@@ -11,7 +11,6 @@ module.exports = function(callback) {
 		console.log("Is Active: "+isActive)
 		
 		callback()
-		
 	}
 	
 	asfn();

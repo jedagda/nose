@@ -8,21 +8,13 @@ contract SmellTracker{
 	//mapping containing current unresolved smells
     mapping (string => uint) public smellBase;
     uint issueCount;
-    //Flag indicating if initial smell report was mapped
     
     
     constructor() public{
         issueCount = 0;
-        //hasMappedInitial = false;
     }
     
     
-    
-    /**
-		checkSmellsF()
-		@param smellReport - JSON code report
-		@return number of smells identified in report
-    **/
     
     bool hasReloaded = false;
     
@@ -38,7 +30,12 @@ contract SmellTracker{
 	}
     
     
-    
+    /**
+		checkSmellsF()
+		@param json - JSON code report
+		@param hasMappedInitial - Flag for initial map
+		@return number of smells identified in report
+    **/
     function checkSmellsF(string memory json, bool hasMappedInitial) public returns (uint){
     
     

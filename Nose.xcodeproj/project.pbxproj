@@ -8,6 +8,7 @@
 
 /* Begin PBXFileReference section */
 		487F38D7238CABD9009EF21C /* didfix.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = didfix.js; sourceTree = "<group>"; };
+		489C903223A4A1DF001EA009 /* readme.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		48F9D6442389DC6400C02191 /* truffle-config.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = "truffle-config.js"; sourceTree = "<group>"; };
 		48F9D6452389DC6400C02191 /* balances.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = balances.js; sourceTree = "<group>"; };
 		48F9D6462389DC6400C02191 /* installed_contracts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = installed_contracts; sourceTree = "<group>"; };
@@ -25,6 +26,7 @@
 			children = (
 				48F9D6452389DC6400C02191 /* balances.js */,
 				48F9D64B238A8DB200C02191 /* setup.js */,
+				489C903223A4A1DF001EA009 /* readme.txt */,
 				48F9D64D238A915400C02191 /* cancel.js */,
 				487F38D7238CABD9009EF21C /* didfix.js */,
 				48F9D64C238A8F2200C02191 /* status.js */,

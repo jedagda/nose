@@ -11,7 +11,6 @@ module.exports = function(callback) {
 		console.log(didSet)
 		
 		callback()
-		
 	}
 	
 	asfn();
